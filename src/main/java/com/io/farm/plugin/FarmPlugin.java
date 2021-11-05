@@ -18,6 +18,10 @@ public class FarmPlugin extends JavaPlugin {
     private void setupEvent() {
         getServer().getPluginManager().registerEvents(new EventListener(), this);
     }
+    
+    public void setScheduler(BukkitRunnable runnable) {
+        getServer().getScheduler().runTaskTimer(this, runnable, 0L, 20L);
+    }
 
     //randomTickSpeed 를 0로 설정하셔야 합니다!
     @Override
