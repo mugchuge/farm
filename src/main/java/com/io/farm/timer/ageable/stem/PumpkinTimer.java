@@ -47,7 +47,9 @@ public class PumpkinTimer extends BukkitRunnable {
             if (num <= 8) {
                 if (num == 0) {
                     Location loc = block2.getLocation();
-
+                    loc.getBlock().setType(Material.PUMPKIN);
+                    World world = loc.getWorld();
+                    world.spawnParticle(Particle.VILLAGER_HAPPY, loc, 3);
                 } else {
                     BlockData data = block2.getBlockData();
                     state.setState(data, stateNum);
