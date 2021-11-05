@@ -45,25 +45,40 @@ public class EventListener extends JavaPlugin implements Listener {
         switch (b.getType()) {
             case WHEAT: {
                 getServer().getScheduler().runTaskTimer(this, new WheatTimer(b, p), 0L, 20L);
+                break;
             }
             case POTATOES: {
                 getServer().getScheduler().runTaskTimer(this, new PotatoTimer(b, p), 0L, 20L);
+                break;
             }
             case CARROTS: {
                 getServer().getScheduler().runTaskTimer(this, new CarrotTimer(b, p), 0L, 20L);
+                break;
             }
             case BEETROOT: {
                 getServer().getScheduler().runTaskTimer(this, new BeetTimer(b, p), 0L, 20L);
+                break;
             }
             case NETHER_WART: {
                 getServer().getScheduler().runTaskTimer(this, new NetherWartTimer(b, p), 0L, 20L);
+                break;
             }
             case SWEET_BERRY_BUSH: {
                 getServer().getScheduler().runTaskTimer(this, new BerryTimer(b, p), 0L, 20L);
+                break;
+            }
+            case PUMPKIN_STEM: {
+                getServer().getScheduler().runTaskTimer(this, new PumpkinTimer(b, p), 0L, 20L);
+                break;
+            }
+            case MELON_STEM: {
+                getServer().getScheduler().runTaskTimer(this, new MelonTimer(b, p), 0L, 20L);
+                break;
             }
             case FARMLAND: {
                 Farmland farmland = (Farmland) data;
                 farmland.setMoisture(farmland.getMaximumMoisture());
+                break;
             }
         }
     }
