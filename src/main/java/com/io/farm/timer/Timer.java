@@ -6,6 +6,8 @@ import org.bukkit.entity.Player;
 
 public class Timer {
 
+    //묘목 추가 예정
+    
     /*
     농작물 가격:
         밀 > 네더와트 > 수박 = 호박 > 사탕무 > 당근 = 감자 > 베리
