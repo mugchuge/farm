@@ -45,6 +45,16 @@ public class Timer {
                 berryTimer.addTimer(block.getLocation());
                 break;
             }
+            case PUMPKIN_STEM: {
+                PumpkinTimer pumpkinTimer = new PumpkinTimer(block, p);
+                pumpkinTimer.addTimer(block.getLocation());
+                break;
+            }
+            case MELON_STEM: {
+                MelonTimer melonTimer = new MelonTimer(block, p);
+                melonTimer.addTimer(block.getLocation());
+                break;
+            }
         }
     }
 }
