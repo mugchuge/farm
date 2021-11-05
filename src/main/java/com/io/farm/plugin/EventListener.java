@@ -5,6 +5,7 @@ import com.io.farm.implement.CropStateImp;
 import com.io.farm.state.CropState;
 import com.io.farm.timer.Timer;
 import com.io.farm.timer.ageable.*;
+import com.io.farm.plugin.FarmPlugin;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
@@ -41,6 +42,7 @@ public class EventListener implements Listener {
         Block b = e.getBlock();
         Player p = e.getPlayer();
         BlockData data = b.getBlockData();
+        FarmPlugin farmPlugin = new FarmPlugin();
         switch (b.getType()) {
             case WHEAT: {
                 farmPlugin.setScheduler(new WheatTimer(b, p));
