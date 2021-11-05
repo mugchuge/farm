@@ -18,9 +18,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.world.StructureGrowEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class EventListener extends JavaPlugin implements Listener {
+public class EventListener implements Listener {
 
     @EventHandler
     public void onGrowth(BlockGrowEvent e) {
@@ -34,7 +33,7 @@ public class EventListener extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onFade(BlockFadeEvent e) {
-        e.setCancelled(true);
+        if (e.getBlock().getType().equals(Material.FARMLAND)) e.setCancelled(true);
     }
 
     @EventHandler
@@ -44,35 +43,35 @@ public class EventListener extends JavaPlugin implements Listener {
         BlockData data = b.getBlockData();
         switch (b.getType()) {
             case WHEAT: {
-                getServer().getScheduler().runTaskTimer(this, new WheatTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new WheatTimer(b, p));
                 break;
             }
             case POTATOES: {
-                getServer().getScheduler().runTaskTimer(this, new PotatoTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new PotatoTimer(b, p));
                 break;
             }
             case CARROTS: {
-                getServer().getScheduler().runTaskTimer(this, new CarrotTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new CarrotTimer(b, p));
                 break;
             }
             case BEETROOT: {
-                getServer().getScheduler().runTaskTimer(this, new BeetTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new BeetTimer(b, p));
                 break;
             }
             case NETHER_WART: {
-                getServer().getScheduler().runTaskTimer(this, new NetherWartTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new NetherWartTimer(b, p));
                 break;
             }
             case SWEET_BERRY_BUSH: {
-                getServer().getScheduler().runTaskTimer(this, new BerryTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new BerryTimer(b, p));
                 break;
             }
             case PUMPKIN_STEM: {
-                getServer().getScheduler().runTaskTimer(this, new PumpkinTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new PumpkinTimer(b, p));
                 break;
             }
             case MELON_STEM: {
-                getServer().getScheduler().runTaskTimer(this, new MelonTimer(b, p), 0L, 20L);
+                farmPlugin.setScheduler(new MelonTimer(b, p));
                 break;
             }
             case FARMLAND: {
