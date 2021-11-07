@@ -1,7 +1,0 @@
-name: Farms
-version: '${project.version}'
-main: com.io.farms
-api-version: 1.16
-commands:
-  farm:
-    description: farm command
